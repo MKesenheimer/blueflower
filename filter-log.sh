@@ -1,6 +1,8 @@
 #!/bin/bash
 
-for file in `ls *.csv`; do
+list=$(ls *.csv)
+
+for file in $list; do
   out="${file%.*}-filtered.csv"
-  sed -n -e '/^SECRET\|^ERROR\|^ENTROPY\|^EXE\|^ENCRYPTED/p' > $out
+  sed -n -e '/^SECRET\|^ERROR\|^ENTROPY\|^EXE\|^ENCRYPTED/p' $file > $out
 done
