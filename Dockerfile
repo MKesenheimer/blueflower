@@ -42,5 +42,5 @@ RUN pip install pdfminer.six==20191110
 WORKDIR /app
 #RUN git clone https://github.com/veorq/blueflower.git
 RUN git clone https://github.com/MKesenheimer/blueflower.git
-RUN git checkout smaller-log
+RUN cd blueflower && git checkout smaller-log
 WORKDIR /app/blueflower
